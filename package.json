@@ -1,0 +1,11 @@
+{
+  "name": "carlicdev-blog",
+  "version": "1.0.0",
+  "description": "A simple blog with express, react, and tailwindcss",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "CarliC",
+  "license": "ISC"
+}
