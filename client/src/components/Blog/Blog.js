@@ -1,15 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react';
 import Card from './Card';
-import data from '../../data';
+import { BlogContext } from '../../context/blog-context';
 
 const Blog = () => {
+    const { posts } = useContext(BlogContext);
     return (
         <div>
             <h1>Hello from Blog</h1>
             <div className='flex flex-wrap justify-around'>
                 {
-                    data.map(i => {
-                        return <Card key={i.id} data={i} />
+                    posts.map(i => {
+                        return <Card key={i._id} post={i} />
                     })
                 }
             </div>
