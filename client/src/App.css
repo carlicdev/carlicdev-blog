@@ -2,3 +2,9 @@
   text-align: center;
 }
 
+.contact-card {
+  background-image: url('./images//codeJs.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: inset 0 0 0 100vmax rgba(88, 92, 209, 0.4);
+}
