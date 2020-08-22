@@ -4,7 +4,8 @@ import axios from 'axios';
 export const BlogContext = createContext();
 
 const BlogContextProvider = (props) => {
-    const [ posts, setPosts ] = useState([]);
+    const [ posts, setPosts ] = useState(null);
+    const [ postsByTag, setPostsByTag] = useState(null);
 
     useEffect(() => {
         const getPosts = async () => {
@@ -20,9 +21,23 @@ const BlogContextProvider = (props) => {
         getPosts();
     }, [])
 
-    console.log(posts)
+    const getPostsByTag = async (e, tag) => {
+        e.preventDefault();
+        let res = await axios.get(`/api/posts/search?tag=${tag}`);
+        setPostsByTag(res.data)
+    }
+
+    const resetPostsByTag = () => {
+        setPostsByTag(null)
+    };
+
     return (
-        <BlogContext.Provider value={{posts}}>
+        <BlogContext.Provider value={{
+            posts,
+            postsByTag,
+            getPostsByTag,
+            resetPostsByTag
+        }}>
             {props.children}
         </BlogContext.Provider>
     )

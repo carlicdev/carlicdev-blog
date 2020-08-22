@@ -11,6 +11,7 @@ require('./db/db');
 
 //Routes
 const postsRouter = require('./routes/posts');
+const searchRouter = require('./routes/search');
 
 // Settings
 app.set('PORT', process.env.PORT || 5000);
@@ -32,6 +33,7 @@ app.use(express.static(path.join(__dirname, './client/build')));
 
 // Api
 app.use('/api/blog', postsRouter);
+app.use('/api/posts', searchRouter);
 
 app.get('/', (req, res) => {
     res.send('Hello world');

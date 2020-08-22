@@ -1,10 +1,68 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+import Moment from 'react-moment';
+import ReactMarkdown from 'react-markdown';
+import BlogSection from './BlogSection';
 
 const PostDetail = ({match}) => {
+    const [post, setPost] = useState(null);
+    const [newSlug, setNewSlug] = useState('');
+
+    useEffect(() => {
+        window.scroll(0,0)
+    },[post]);
+
+    useEffect(()=> {
+        const getPost = async () => {
+            const res = await axios.get(`/api/blog/${match.params.slug}`);
+            setPost(res.data[0]);
+        }
+        getPost();
+    },[newSlug]);
+
+    useEffect(() => {
+        const slug = match.params.slug;
+        const getSlug = () => {
+            setNewSlug(slug)
+        }
+       getSlug();
+    });
+
     return (
         <div>
-            <h1>Hi from PostDetail</h1>
-            <p>{match.params.slug}</p>
+            {
+                !post && (
+                    <div>Loading...</div>
+                )
+            }
+            {
+                post && (
+                   <div>
+                    <div className='mx-auto lg:px-48 sm:px-5'>
+                        <div className='text-6xl font-semibold mt-5'>{post.title}</div>
+                        <img src={require(`../../images/temp/${post.imageUrl}`)} alt='post cover' className='h-64 mx-auto mt-5'/>
+                        <div className='text-gray-700'>
+                            Published on <span className='text-cursive'>
+                                <Moment format='DD/MM/YYYY'>
+                                    {post.createdAt}
+                                </Moment>
+                            </span>
+                        </div>   
+                        <div className='text-justify m-2'>
+                        <ReactMarkdown className='prose lg:prose-xl mx-auto' source={post.content} />
+                        </div>
+                    </div>
+                    <button className='rounded border my-5 text-white font-semibold border-red-600 text-xl py-2 px-5 bg-red-500'>
+                        <Link to='/blog'>
+                            Blog Index
+                        </Link>
+                    </button>
+                    <BlogSection currentPost={post}/>
+                    </div>
+                )
+            }
+
         </div>
     )
 }
