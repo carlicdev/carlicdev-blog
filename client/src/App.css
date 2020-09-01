@@ -6,9 +6,16 @@
   background-image: url('./images//codeJs.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  box-shadow: inset 0 0 0 100vmax rgba(88, 92, 209, 0.4);
+  box-shadow: inset 0 0 0 100vmax rgba(31, 53, 6, 0.815);
 }
 
 .cover {
+  background-image: url('./images//coder.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: inset 0 0 0 100vmax rgba(60, 60, 92, 0.589);
+}
+
+.cover-other {
  background: linear-gradient(90deg,#2c5282 50%, #f7fafc 50% )
 }

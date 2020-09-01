@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const BigCard = ({post}) => {
     return (
             <div className=''>
-            <div className='bg-gray-300  max-w-xs md:max-w-xl rounded-lg shadow-lg pb-3 m-5 mx-auto'>
+            <div className='bg-gray-200  max-w-xs md:max-w-xl rounded-lg shadow-lg pb-3 m-5 mx-auto'>
                 <img src={require(`../../images/temp/${post.imageUrl}`)} alt='teclado' className='rounded-t h-56 w-full'/>
                 <div className='flex flex-wrap justify-around items-center'>
                     <p className=' ml-2 mr-auto  text-2xl text-blue-900 font-semibold mt-2'>{post.title}</p>

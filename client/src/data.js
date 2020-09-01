@@ -1,75 +1,78 @@
 const data = [
     {
         id: 1,
-        title: 'Titulo uno',
+        title: 'Proyecto uno',
         imgUrl: '../../images/teclado.jpeg',
-        description: 'La descripcion del titulo uno',
+        description: 'This project was build with React, Node with Express, and MongoDB',
+        requirements: 'User should be able to do x and y. Data should be stored in this and that manner. User should be able to register and login',
+        process: 'Another large text where I explain the painfull process of building this exact application. Step by Step. Which technologies I used and maybe a lot more...',
         date: '19/11/2020',
         tags: ['react', 'express'],
-        slug: 'titulo-uno'
+        slug: 'Proyecto-uno',
+        url: 'http://www.dailystoic.com'
     },
     {
         id: 2,
-        title: 'Titulo dos',
+        title: 'Proyecto dos',
         imgUrl: '../../images/teclado.jpeg',
-        description: 'La descripcion del titulo dos',
-        date: '31/11/2020',
+        description: 'La descripcion del Proyecto dos',
+        requirements: 'User should be able to do x and y. Data should be stored in this and that manner. User should be able to register and login',        date: '31/11/2020',
         tags: ['react', 'express'],
-        slug: 'titulo-dos'
+        slug: 'Proyecto-dos'
     },
     {
         id: 3,
-        title: 'Titulo tres',
+        title: 'Proyecto tres',
         imgUrl: '../../images/teclado.jpeg',
-        description: 'La descripcion del titulo uno',
-        date: '19/11/2020',
+        description: 'La descripcion del Proyecto uno',
+        requirements: 'User should be able to do x and y. Data should be stored in this and that manner. User should be able to register and login',        date: '19/11/2020',
         tags: ['react', 'express'],
-        slug: 'titulo-tres'
+        slug: 'Proyecto-tres'
     },
     {
         id: 4,
-        title: 'Titulo cuatro',
+        title: 'Proyecto cuatro',
         imgUrl: '../../images/teclado.jpeg',
-        description: 'La descripcion del titulo dos',
-        date: '31/11/2020',
+        description: 'La descripcion del Proyecto dos',
+        requirements: 'User should be able to do x and y. Data should be stored in this and that manner. User should be able to register and login',        date: '31/11/2020',
         tags: ['react', 'express'],
-        slug: 'titulo-cuatro'
+        slug: 'Proyecto-cuatro'
     },
     {
         id: 5,
-        title: 'Titulo cinco',
+        title: 'Proyecto cinco',
         imgUrl: '../../images/teclado.jpeg',
-        description: 'La descripcion del titulo uno',
-        date: '19/11/2020',
+        description: 'La descripcion del Proyecto uno',
+        requirements: 'User should be able to do x and y. Data should be stored in this and that manner. User should be able to register and login',        date: '19/11/2020',
         tags: ['react', 'express'],
-        slug: 'titulo-cinco'
+        slug: 'Proyecto-cinco'
     },
     {
         id: 6,
-        title: 'Titulo seis',
+        title: 'Proyecto seis',
         imgUrl: '../../images/teclado.jpeg',
-        description: 'La descripcion del titulo dos',
-        date: '31/11/2020',
+        description: 'La descripcion del Proyecto dos',
+        requirements: 'User should be able to do x and y. Data should be stored in this and that manner. User should be able to register and login',        date: '31/11/2020',
         tags: ['react', 'express'],
-        slug: 'titulo-seis'
+        slug: 'Proyecto-seis'
     },
     {
         id: 7,
-        title: 'Titulo siete',
+        title: 'Proyecto siete',
         imgUrl: '../../images/teclado.jpeg',
-        description: 'La descripcion del titulo uno',
-        date: '19/11/2020',
+        description: 'La descripcion del Proyecto uno',
+        requirements: 'User should be able to do x and y. Data should be stored in this and that manner. User should be able to register and login',        date: '19/11/2020',
         tags: ['react', 'express'],
-        slug: 'titulo-siete'
+        slug: 'Proyecto-siete'
     },
     {
         id: 8,
-        title: 'Titulo ocho',
+        title: 'Proyecto ocho',
         imgUrl: '../../images/teclado.jpeg',
-        description: 'La descripcion del titulo dos',
-        date: '31/11/2020',
+        description: 'La descripcion del Proyecto dos',
+        requirements: 'User should be able to do x and y. Data should be stored in this and that manner. User should be able to register and login',        date: '31/11/2020',
         tags: ['react', 'express'],
-        slug: 'titulo-ocho'
+        slug: 'Proyecto-ocho'
     },
 
 ];

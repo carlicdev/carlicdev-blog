@@ -27,6 +27,11 @@ const Navbar = () => {
             {
                 isOpen && (
                     <div className='bg-blue-700 py-2 px-2'>
+                        <Link to='/portfolio' 
+                            className='block py-1 rounded hover:bg-blue-800 rounded' 
+                            onClick={() => setIsOpen(!isOpen)}>
+                                Portfolio
+                        </Link>
                         <Link to='/blog' 
                             className='block py-1 rounded hover:bg-blue-800 rounded' 
                             onClick={() => setIsOpen(!isOpen)}>

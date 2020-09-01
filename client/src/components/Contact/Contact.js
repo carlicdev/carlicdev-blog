@@ -1,5 +1,4 @@
 import React from 'react';
-import img1 from '../../images/codeJs.jpg';
 
 const Contact = () => {
     return (
