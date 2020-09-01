@@ -4,6 +4,8 @@ import { Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
+import Portfolio from './components/Portfolio/Portfolio';
+import ProjectDetail from './components/Portfolio/ProjectDetail';
 import Blog from './components/Blog/Blog';
 import About from './components/About/About';
 import Contact from './components/Contact/Contact';
@@ -15,6 +17,8 @@ function App() {
       <Navbar />
       <Switch>
         <Route exact path='/' component={Home} />
+        <Route exact path='/portfolio' component={Portfolio} />
+        <Route path='/portfolio/:slug' component={ProjectDetail} />
         <Route exact path='/blog' component={Blog} />
         <Route path='/blog/:slug' component={PostDetail} />
         <Route path='/about' component={About} />
