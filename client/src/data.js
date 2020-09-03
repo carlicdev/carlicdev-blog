@@ -27,7 +27,8 @@ const data = [
         description: 'La descripcion del Proyecto uno',
         requirements: 'User should be able to do x and y. Data should be stored in this and that manner. User should be able to register and login',        date: '19/11/2020',
         tags: ['react', 'express'],
-        slug: 'Proyecto-tres'
+        slug: 'Proyecto-tres',
+        url: 'http://www.dailystoic.com'
     },
     {
         id: 4,

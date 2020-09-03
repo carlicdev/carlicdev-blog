@@ -23,13 +23,20 @@ const ProjectDetail = ({match}) => {
                 project && (
                     <div className='my-2'>
                         <div className='mx-auto lg:px-48 sm:px-5'>
-                        <img src={require(`../../images/teclado.jpeg`)} alt='post cover' className='h-128 mx-auto mt-5'/>
+                        <img src={require('../../images/teclado.jpeg')} alt='post cover' className='h-128 mx-auto mt-5'/>
                         <div className='text-blue-900 font-semibold text-5xl'>
                             {project.title}
                         </div>
                         <div className='text-gray-800 text-xl'>
                             {project.description}
                         </div>
+                        {
+                            project.url && (
+                                <button className='mt-5 shadow-sm bg-green-700 px-3 py-2 text-white rounded focus:outline-none hover:bg-green-800'>
+                                    Visit site
+                                </button>
+                            )
+                        }
                         <div className='mt-5 text-justify'>
                             <div className='text-xl font-semibold text-blue-900'>
                                 The requirements
@@ -58,7 +65,7 @@ const ProjectDetail = ({match}) => {
             }
             <hr/>
             <div className='flex w-full justify-center'>
-                <button className='bg-blue-800 text-white py-2 px-3 rounded focus:outline-none my-5'>
+                <button className='bg-blue-700 text-white py-2 px-3 hover:bg-blue-600 shadow-sm rounded focus:outline-none my-5'>
                     <Link to='/portfolio'>
                     Back to portfolio
                     </Link>

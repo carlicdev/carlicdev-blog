@@ -12,14 +12,14 @@ const Project = ({project}) => {
                 <div className='flex justify-center pt-2 px-5'>
                 {
                     project.url && (
-                        <button className='bg-blue-700 text-white rounded px-2 py-1 shadow mr-2'>
+                        <button className='bg-green-700 hover:bg-green-600 text-white rounded px-2 py-1 shadow mr-2'>
                         <a href={project.url}>
                             Visit site
                         </a>
                     </button>
                     )
                 }
-                <button className='bg-green-700 text-white rounded px-2 py-1 shadow'>
+                <button className='bg-blue-700 hover:bg-blue-600 text-white rounded px-2 py-1 shadow'>
                     <Link to={`portfolio/${project.slug}`}>
                         Details
                     </Link>
