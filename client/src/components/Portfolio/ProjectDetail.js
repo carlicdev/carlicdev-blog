@@ -11,7 +11,7 @@ const ProjectDetail = ({match}) => {
             setProject(myProject);
         }
         getProject();
-    },[]);
+    },[match.params.slug]);
 
     console.log(project)
     return (

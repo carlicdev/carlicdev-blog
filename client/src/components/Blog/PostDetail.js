@@ -19,7 +19,7 @@ const PostDetail = ({match}) => {
             setPost(res.data[0]);
         }
         getPost();
-    },[newSlug]);
+    },[newSlug, match.params.slug]);
 
     useEffect(() => {
         const slug = match.params.slug;
