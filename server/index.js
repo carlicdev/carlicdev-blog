@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({limit: '50mb', extended: true, parameterLimit: 50
 app.use(multer({dest: path.join(__dirname, '../client/src/images/temp')}).single('file'));
 
 // React static files
-app.use(express.static(path.join(__dirname, './client/build')));
+app.use(express.static(path.join(__dirname, '../client/build')));
 
 // Sessions
 
@@ -38,6 +38,10 @@ app.use('/api/blog', postsRouter);
 app.use('/api/posts', searchRouter);
 app.use('/api/contact', contactRouter);
 
+// Handles any requests that don't match the ones above
+app.get('*', (req, res) =>{
+    res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
 
 // Start server
 app.listen(app.get('PORT'), () => {
