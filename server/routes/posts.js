@@ -8,6 +8,20 @@ const { randomNumber } = require('../helpers/libs');
 
 const Post = require('../models/post');
 
+const AWS = require('aws-sdk');
+const { v1: uuid } = require('uuid');
+const multer = require('multer');
+const multerS3 = require('multer-s3');
+
+const accessKey = process.env.ACCESS_KEY_ID;
+const secretKey = process.env.SECRET_ACCESS_KEY;
+
+const s3 = new AWS.S3({
+    accessKeyId: accessKey,
+    secretAccessKey: secretKey,
+    region: 'us-east-2'
+});
+
 // Get all posts
 router.get('/', async (req, res) => {
     const response = await Post.find();
@@ -26,68 +40,43 @@ router.get('/search', (req, res) => {
     res.json({msg: 'hello data'})
 })
 
-// New post
-router.post('/new-post', (req, res) => {
-    const savePost = async () => {
-        const imgUrl = randomNumber();
-        const image = await Post.find({imageUrl: imgUrl});
-        if(image.length > 0) {
-            savePost();
-        }  else {
-            const { title, content, tags } = req.body;
-            const imageTempPath = req.file.path;
-            const ext = path.extname(req.file.originalname).toLowerCase();
-            const targetPath = path.resolve(`./client/src/images/temp/${imgUrl}${ext}`);
 
-            if (ext === '.png' || ext === '.jpg' || ext === '.jpeg' || ext === '.gif') {
-                await fs.rename(imageTempPath, targetPath, (err) => {
-                    if (err) {
-                        console.log('There was an error in rename')
-                    } else {
-                        console.log('rename was OK')
-                    }
-                });
+// Create single key
+let imageKey = `${uuid()}.jpeg`
 
-                const newPost = new Post({
-                    _id: new mongoose.Types.ObjectId,
-                    title, 
-                    content,
-                    description: content.slice(0, 50),
-                    imageUrl: imgUrl + ext,
-                    tags: tags.split(',')
-                });
-
-                newPost.save()
-                    .then(() => {
-                        console.log('blogpost created')
-                        res.status(201).json({
-                            msg: 'new blog-post created'
-                        });
-                    }).catch(err => {
-                        console.log('couldnt create new blog post')
-                        res.status(500).json({
-                            msg: 'couldn´t create new blog-post'
-                        });
-                    });
-
-            } else {
-                await fs.unlink(imageTempPath, (err) => {
-                    if (err) {
-                        console.log('enter image. couldn´t unlin')
-                        res.status(500).json({
-                            msg: 'please enter an image. We couldn´t unlink the document'
-                        });
-                    } else {
-                        console.log('enter image. unlinked')
-                        res.status(500).json({
-                            msg: 'please enter an image'
-                        });
-                    }
-                })
-            }
+//Save image to s3
+let upload = multer({
+    storage: multerS3({
+        s3: s3,
+        bucket: 'bucket-for-carlicdev',
+        acl: 'public-read',
+        contentType: multerS3.AUTO_CONTENT_TYPE,
+        key: function(req, file, cb) {
+            cb(null, imageKey)
         }
+    })
+});
+
+// New Post
+router.post('/new-post', upload.single('file'), async (req, res) => {
+    const { title, content, tags } = req.body;
+    const newPost = new Post({
+        _id: new mongoose.Types.ObjectId,
+        title, 
+        content,
+        description: content.slice(0, 50),
+        imageUrl: imageKey,
+        tags: tags.split(',')
+    });
+    
+    try {
+        await newPost.save();
+        res.status(201).json({msg: 'new blog-post created'})
+    } catch (err) {
+        console.log(err);
+        res.sendStatus(err.status)
     }
-    savePost();
-})
+
+});
 
 module.exports = router;

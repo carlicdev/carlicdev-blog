@@ -42,7 +42,7 @@ const PostDetail = ({match}) => {
                    <div>
                     <div className='mx-auto lg:px-48 sm:px-5'>
                         <div className='text-6xl font-semibold mt-5'>{post.title}</div>
-                        <img src={require(`../../images/temp/${post.imageUrl}`)} alt='post cover' className='h-64 mx-auto mt-5'/>
+                        <img src={`https://bucket-for-carlicdev.s3.us-east-2.amazonaws.com/${post.imageUrl}`} alt='post cover' className='h-64 mx-auto mt-5'/>
                             <div className='text-gray-700 my-10 mx-auto'>
                                 <FiUser className='inline mr-1 mb-1'/>
                                 <span className='text-cursive mr-4'>

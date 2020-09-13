@@ -6,7 +6,7 @@ const BigCard = ({post}) => {
     return (
             <div className=''>
             <div className='bg-gray-200  max-w-xs md:max-w-xl rounded-lg shadow-lg pb-3 m-5 mx-auto'>
-                <img src={require(`../../images/temp/${post.imageUrl}`)} alt='teclado' className='rounded-t h-56 w-full'/>
+                <img src={`https://bucket-for-carlicdev.s3.us-east-2.amazonaws.com/${post.imageUrl}`} alt='teclado' className='rounded-t h-56 w-full'/>
                 <div className='flex flex-wrap justify-around items-center'>
                     <p className=' ml-2 mr-auto  text-2xl text-blue-900 font-semibold mt-2'>{post.title}</p>
                     <p className=' mr-2 ml-auto text-sm  mt-2 text-gray-700'>
