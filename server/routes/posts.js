@@ -48,7 +48,7 @@ let imageKey = `${uuid()}.jpeg`
 let upload = multer({
     storage: multerS3({
         s3: s3,
-        bucket: 'bucket-for-carlicdev',
+        bucket: process.env.BUCKET,
         acl: 'public-read',
         contentType: multerS3.AUTO_CONTENT_TYPE,
         key: function(req, file, cb) {
