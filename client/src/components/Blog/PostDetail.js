@@ -59,7 +59,7 @@ const PostDetail = ({match}) => {
                             <ReactMarkdown className='prose lg:prose-xl mx-auto' source={post.content} />
                         </div>
                     </div>
-                    <button className='rounded border my-5 text-white font-semibold border-red-600 text-xl py-2 px-5 bg-red-500 focus:outline-none'>
+                    <button className='rounded border my-5 text-white font-semibold border-red-600 text-xl py-2 px-5 bg-red-500 hover:bg-red-600 focus:outline-none'>
                         <Link to='/blog'>
                             Blog Index
                         </Link>

@@ -40,7 +40,7 @@ const BlogSection = ({currentPost}) => {
                                         } 
                                     </div>
                                     <div className='mr-2 ml-auto'>
-                                        <button type='button' className='bg-blue-900 rounded shadow-md text-white px-2 py-1'>
+                                        <button type='button' className='bg-blue-900 hover:bg-blue-800 focus:outline-none rounded shadow-md text-white px-2 py-1'>
                                             <Link to={`${post.slug}`}>
                                                 Read more
                                             </Link>
@@ -57,4 +57,4 @@ const BlogSection = ({currentPost}) => {
     )
 }
 
-export default BlogSection
+export default BlogSection;

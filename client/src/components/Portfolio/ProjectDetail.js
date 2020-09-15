@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import data from '../../data';
+import Modal from '../Modal/Modal';
 
 const ProjectDetail = ({match}) => {
     const [project, setProject] = useState(null);
+    const [modalState, setModalState] = useState({open: false, image: null});
 
     useEffect(() => {
         const getProject = () => {
@@ -16,6 +18,7 @@ const ProjectDetail = ({match}) => {
     console.log(project)
     return (
         <div>
+            <Modal handleModal={modalState} />
             {
                 !project && <p>Loading...</p>
             }
@@ -39,9 +42,15 @@ const ProjectDetail = ({match}) => {
                         }
                         <div className='mt-5 text-justify max-w-2xl mx-auto'>
                             <div className='flex flex-wrap justify-center'>
-                                <img src={require(`../../images/portfolio/${project.gallery1}`)} alt='post cover' className='h-32 w-48 mx-auto mt-5'/>
-                                <img src={require(`../../images/portfolio/${project.gallery2}`)} alt='post cover' className='h-32 w-48 mx-auto mt-5'/>
-                                <img src={require(`../../images/portfolio/${project.gallery3}`)}  alt='post cover' className='h-32 w-48 mx-auto mt-5'/>
+                                <button className='focus:outline-none p-1' onClick={() => setModalState({open: true, image: `${project.gallery1}`})}>
+                                    <img src={require(`../../images/portfolio/${project.gallery1}`)} alt='post cover' className='h-32 w-48 mx-auto mt-5'/>
+                                </button>
+                                <button className='focus:outline-none p-1' onClick={() => setModalState({open: true, image: `${project.gallery2}`})}>
+                                    <img src={require(`../../images/portfolio/${project.gallery2}`)} alt='post cover' className='h-32 w-48 mx-auto mt-5'/>
+                                </button>
+                                <button className='focus:outline-none p-1' onClick={() => setModalState({open: true, image: `${project.gallery3}`})}>
+                                    <img src={require(`../../images/portfolio/${project.gallery3}`)}  alt='post cover' className='h-32 w-48 mx-auto mt-5'/>
+                                </button>
                             </div>
                             <div className='text-xl font-semibold text-blue-900 mt-10'>
                                 The requirements

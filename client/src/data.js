@@ -10,7 +10,7 @@ const data = [
         requirements: 'User should be able to register and login in order to add products to his shopping cart. Should be able to pay with a credit card and view all his orders and their status.',
         process: 'Another large text where I explain the painfull process of building this exact application. Step by Step. Which technologies I used and maybe a lot more...',
         slug: 'Proyecto-uno',
-        url: 'https://carlicdev.herokuapp.com/'
+        url: 'https://polar-lake-93026.herokuapp.com/'
     },
     {
         id: 2,

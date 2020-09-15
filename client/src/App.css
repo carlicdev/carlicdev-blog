@@ -19,3 +19,7 @@
 .cover-other {
  background: linear-gradient(90deg,#2c5282 50%, #f7fafc 50% )
 }
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.7)
+}
