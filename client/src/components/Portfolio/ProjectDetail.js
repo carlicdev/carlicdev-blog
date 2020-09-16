@@ -15,7 +15,6 @@ const ProjectDetail = ({match}) => {
         getProject();
     },[match.params.slug]);
 
-    console.log(project)
     return (
         <div>
             <Modal handleModal={modalState} />
