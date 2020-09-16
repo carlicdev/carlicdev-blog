@@ -36,7 +36,9 @@ const ProjectDetail = ({match}) => {
                         {
                             project.url && (
                                 <button className='mt-5 shadow-sm bg-green-700 px-3 py-2 text-white rounded focus:outline-none hover:bg-green-800'>
-                                    Visit site
+                                    <a href={project.url} >
+                                        Visit site
+                                    </a>
                                 </button>
                             )
                         }

@@ -22,7 +22,8 @@ const data = [
         description: 'La descripcion del Proyecto dos',
         requirements: 'User should be able to do x and y. Data should be stored in this and that manner. User should be able to register and login',        date: '31/11/2020',
         tags: ['react', 'express'],
-        slug: 'Proyecto-dos'
+        slug: 'Proyecto-dos',
+        url: 'https://polar-lake-93026.herokuapp.com/'
     },
     {
         id: 3,
@@ -47,7 +48,8 @@ const data = [
         description: 'La descripcion del Proyecto dos',
         requirements: 'User should be able to do x and y. Data should be stored in this and that manner. User should be able to register and login',        date: '31/11/2020',
         tags: ['react', 'express'],
-        slug: 'Proyecto-cuatro'
+        slug: 'Proyecto-cuatro',
+        url: 'https://polar-lake-93026.herokuapp.com/'
     },
     {
         id: 5,
@@ -59,7 +61,8 @@ const data = [
         description: 'La descripcion del Proyecto uno',
         requirements: 'User should be able to do x and y. Data should be stored in this and that manner. User should be able to register and login',        date: '19/11/2020',
         tags: ['react', 'express'],
-        slug: 'Proyecto-cinco'
+        slug: 'Proyecto-cinco',
+        url: 'https://polar-lake-93026.herokuapp.com/'
     },
     {
         id: 6,
@@ -71,33 +74,9 @@ const data = [
         description: 'La descripcion del Proyecto dos',
         requirements: 'User should be able to do x and y. Data should be stored in this and that manner. User should be able to register and login',        date: '31/11/2020',
         tags: ['react', 'express'],
-        slug: 'Proyecto-seis'
-    },
-    {
-        id: 7,
-        title: 'Proyecto siete',
-        imgUrl: 'lifeDrop1.png',
-        gallery1: 'dropLife2.png',
-        gallery2: 'dropLife3.png',
-        gallery3: 'dropLife4.png',
-        description: 'La descripcion del Proyecto uno',
-        requirements: 'User should be able to do x and y. Data should be stored in this and that manner. User should be able to register and login',        date: '19/11/2020',
-        tags: ['react', 'express'],
-        slug: 'Proyecto-siete'
-    },
-    {
-        id: 8,
-        title: 'Proyecto ocho',
-        imgUrl: 'lifeDrop1.png',
-        gallery1: 'dropLife2.png',
-        gallery2: 'dropLife3.png',
-        gallery3: 'dropLife4.png',
-        description: 'La descripcion del Proyecto dos',
-        requirements: 'User should be able to do x and y. Data should be stored in this and that manner. User should be able to register and login',        date: '31/11/2020',
-        tags: ['react', 'express'],
-        slug: 'Proyecto-ocho'
-    },
-
+        slug: 'Proyecto-seis',
+        url: 'https://polar-lake-93026.herokuapp.com/'
+    }
 ];
 
 module.exports = data;
