@@ -7,14 +7,40 @@ const Navbar = () => {
     const [ isOpen, setIsOpen ] = useState(false);
 
     return (
-        <div className='bg-blue-800 text-white sticky top-0'>
+        <div className='bg-blue-800 text-white sticky top-0 shadow'>
             <div className='flex py-3 justify-around items-center'>
-                <div className='ml-2'>
+                <div className='ml-3 mr-auto '>
                     <button className='text-2xl font-bold'>
                         <Link to='/'><AiFillHome /></Link>
                     </button>
                 </div>
-                <div className='ml-auto mr-2 text-2xl '>
+                <div className='hidden lg:inline mx-auto'>
+                    <ul>
+                        <li className='inline mx-4'>
+                            <Link to='/portfolio'>
+                                PORTFOLIO
+                            </Link>
+                        </li>
+                        <li className='inline mx-4'>
+                            <Link to='/blog'>
+                                BLOG
+                            </Link>
+                        </li>
+                        <li className='inline mx-4'>
+                            <Link to='/about'>
+                                ABOUT
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
+                <div className='hidden lg:inline mr-2 ml-auto'>
+                    <button className='bg-green-700 rounded-full px-4 py-1 focus:outline-none shadow hover:bg-green-600'>
+                        <Link to='/contact'>
+                            Contact
+                        </Link>
+                    </button>
+                </div>
+                <div className='ml-auto mr-2 text-2xl lg:hidden'>
                     <button type='button'
                         className='hover:text-blue-500 focus:outline-none focus:text-blue-500' 
                         onClick={() => setIsOpen(!isOpen)} >
