@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Project = ({project}) => {
     return (
         <div className='lg:w-1/3 max-w-lg p-3'>
-            <div className='bg-gray-200  max-w-xs rounded-lg shadow  pb-3 m-5 mx-auto'>
+            <div className='bg-gray-100 max-w-xs rounded shadow  pb-3 m-5 mx-auto'>
             <img src={require(`../../images/portfolio/${project.imgUrl}`)} alt='teclado' className='rounded-t h-56 w-full'/>
                 <div className='font-semibold text-lg text-blue-900 mt-2'>
                     {project.title}
